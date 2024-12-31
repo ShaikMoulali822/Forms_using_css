@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/6.6.6/css/flag-icon.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      input:required {
+        border: 2px solid red;
+      }
+      input:optional {
+        border: 2px dashed black;
+      }
+      body {
+        background: rgb(34, 193, 195);
+        background: radial-gradient(
+          circle,
+          rgba(34, 193, 195, 1) 35%,
+          rgba(253, 187, 45, 1) 100%
+        );
+      }
+      fieldset {
+        width: 700px;
+        border: 5px solid black;
+        border-radius: 20px;
+      }
+      input[readonly] {
+        background-color: violet;
+        font-weight: 800;
+        text-align: center;
+      }
+      select {
+        border-radius: 20px;
+        background-color: blueviolet;
+        font-size: 15px;
+        width: 130px;
+        cursor: pointer;
+        color: white;
+      }
+      input[type="radio"]:checked{
+        height: 20px;
+        width: 20px;
+      }
+      input[type="radio"]:checked + label{
+        color: white;
+        font-size: 25px;
+      }
+      p{
+        display: none;
+      }
+      input:hover+p{
+        display: inline;
+        color: black;
+        background-color: rgb(13, 218, 57);
+      }
+      input:focus{
+        background-color: yellow;
+        color: black;
+        font-weight: 700;
+      }
+      img{
+        display: none;
+      }
+      input[type="email"]:focus:valid~img.valid{
+          display: inline;
+          height: 20px;
+          width: 25px;
+          background: transparent;
+      }
+      input[type="email"]:focus:invalid~img.invalid{
+          display: inline;
+          height: 20px;
+          width: 20px;
+      }
+      input[name="age"]:focus:in-range~img.valid{
+        display: inline;
+        height: 20px;
+        width: 25px;
+      }
+      input[name="age"]:focus:out-of-range~img.invalid{
+        display: inline;
+        height: 20px;
+        width: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Course Registration Form</h1>
+    <form action="https://crex.live/#goog_rewarded">
+      <fieldset>
+        <legend><h4>Personal Details</h4></legend>
+        <table>
+          <tr>
+            <td>
+              <label for="fname">First Name</label>
+            </td>
+            <td>
+              <input
+                type="text"
+                required
+                id="fname"
+                placeholder="Eg:Sachin"
+                size="15"
+                maxlength="10"
+              />
+              <p>Enter Your First Name</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="lname">Last Name</label>
+            </td>
+            <td>
+              <input
+                type="text"
+                required
+                id="lname"
+                placeholder="Eg:Tendulkar"
+                size="15"
+                maxlength="10"
+              />
+              <p>Enter Your Last Name</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="mail">Email</label>
+            </td>
+            <td>
+              <input
+                type="email"
+                required
+                id="mail"
+                pattern="[a-z0-9_.]+@[a-z]+.[a-z]{2,}"
+                placeholder="sachin@gmail.com"
+                size="15"
+              />
+              <img src="https://png.pngtree.com/png-vector/20220405/ourmid/pngtree-green-check-mark-icon-tick-yes-symbol-png-image_4529161.png" class="valid">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnN7clnUcd1UzxeL1NHOtn0z4WwX0PJiECwQ&s" class="invalid">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="password">password</label>
+            </td>
+            <td>
+              <input
+                type="password"
+                required
+                id="password"
+                placeholder="Eg:Moulalai@1234"
+                size="15"
+              />
+              <p>Atleast contains 1 UpperCase,1 LowerCase,1 Special Character</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="confirm">Confirm Password</label>
+            </td>
+            <td>
+              <input
+                type="password"
+                required
+                id="confirm"
+                placeholder="Eg:Moulalai@145"
+                size="15"
+              />
+              <p>Enter Your Confirm Password</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="mobile">Phone Number</label>
+            </td>
+            <td>
+              <input
+                type="tel"
+                required
+                id="mobile"
+                pattern="[6-9]{1}[0-9]{9}"
+                placeholder="9989356811"
+                size="15"
+                maxlength="10"
+              />
+              <p>Enter Your Mobile Number</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="birth">Date Of Birth</label>
+            </td>
+            <td>
+              <input
+                type="date"
+                required
+                id="birth"
+                placeholder="Eg:08-06-2001"
+              />
+              <p>Enter Your Date Of Birth</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="age">Age</label>
+            </td>
+            <td>
+              <input type="number" required name="age" placeholder="Eg:22" min="18" max="100" />
+              <img src="https://png.pngtree.com/png-vector/20220405/ourmid/pngtree-green-check-mark-icon-tick-yes-symbol-png-image_4529161.png" class="valid">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnN7clnUcd1UzxeL1NHOtn0z4WwX0PJiECwQ&s" class="invalid">
+            </td>
+          </tr>
+          <tr>
+            <td><label>Gender</label></td>
+            <td>
+              <input type="radio" name="gender" value="M" />
+              <label for="">Male</label>
+              <input type="radio" required value="Female" name="gender" />
+              <label for="Female">Female</label>
+              <input type="radio" required value="Others" name="gender" />
+              <label for="Others">Others</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="country">Country</label>
+            </td>
+            <td>
+              <select required>
+                <selec>
+                <option value="ind">India</option>
+                <option value="aus">Australia</option>
+                <option value="eng">England</option>
+                <option value="sl">Srilanka</option>
+                <option value="sa">South Africa</option>
+                <option value="usa">America</option>
+                <option value="pak">Pakistan</option>
+                <option value="Ban">Bangladesh</option>
+                <option value="ire">Ireland</option>
+                <option value="afg">Afghanistan</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="upload">Upload Document</label>
+            </td>
+            <td>
+              <input type="file" name="Document" id="upload" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Address</label></td>
+            <td>
+              <textarea
+                placeholder="Enter Your Address"
+                rows="5"
+                cols="40"
+                required
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="reset" name="reset" id="" /></td>
+          </tr>
+        </table>
+      </fieldset>
+      <fieldset>
+        <legend><h4>Course Details</h4></legend>
+        <table>
+          <tr>
+            <td>Select Course</td>
+          </tr>
+          <tr>
+            <td>
+              <select required>
+                <option value="jfs">Java FullStack</option>
+                <option value="pfs">Python FullStack</option>
+                <option value="DEv">Devops</option>
+                <option value="web">Web Development</option>
+                <option value="Backend">Backend</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="">Institution</label>
+              <input type="text" name="inst" value="TAP ACADEMY" readonly />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="">Delivery Mode</label>
+              <input type="checkbox" name="delivery" value="on" />
+              <label for="">Online Mode</label>
+              <input type="checkbox" name="delivery" value="off" />
+              <label for="">Offline Mode</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="">Comments</label></td>
+          </tr>
+          <tr>
+            <td>
+              <textarea name="" id="" rows="5" cols="40"></textarea>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+      <h5 style="padding-left: 190px">
+        <input type="submit" name="submit" value="submit" required />
+      </h5>
+    </form>
+  </body>
+</html>
